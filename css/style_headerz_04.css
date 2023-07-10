@@ -2,6 +2,7 @@
 :root {
   --menu_color: #FBFA34;
   --slider_text_color: #F9F13E;
+  --menu_icons_color: #8AFF8E;
 }
 *, *::after, *::before {
   margin: 0;
@@ -10,6 +11,12 @@
 }
 body {
   font-family: 'Roboto Mono', monospace;
+  font-weight: 400;
+}
+.submenu_link {
+  color: #000;
+  font-size: 14px;
+  line-height: 24px;
 }
 .main {
   display: grid;
@@ -47,6 +54,56 @@ body {
 /* Горизонтальное меню */
 .submenu {
   grid-area: submenu;
+}
+.submenu li {
+  list-style: none;
+}
+.submenu li a {
+  text-decoration: none;
+}
+.menu_group_list a::after {
+  display: block;
+  content: '';
+  height: 4px; 
+  background-color: #000;
+  width: 0%;
+  transition: width 0.4s ease-in-out;
+}
+.menu_group_list a:hover:after, .menu_group_list a:focus:after {
+  width: 100%;
+}
+.submenu_search_block {
+  display: flex;
+  background-color: var(--menu_icons_color);
+  justify-content: center;
+  align-items: center;
+  width: 199px;
+  height: 114px;
+}
+.submenu_search_block img {
+  width: 19px;
+  height: 19px;
+}
+.arrow_down {
+  padding-left: 8.5px;
+}
+.menu_group_list {
+  display: flex;
+  align-content: center;
+  align-items: center;
+}
+.menu_group_list li {
+  margin-right: 60px;
+}
+.menu_group_list li:last-child {
+  margin-right: 0;
+}
+.menu_list {
+  display: flex;
+  justify-content: space-between;
+  padding-left: 91px;
+  height: 114px;
+  align-items: center;
 }
 /* Блок поиска */
 .search {
