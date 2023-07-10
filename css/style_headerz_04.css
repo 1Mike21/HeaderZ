@@ -1,0 +1,58 @@
+/* Цвета */
+:root {
+  --menu_color: #FBFA34;
+  --slider_text_color: #F9F13E;
+}
+*, *::after, *::before {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+body {
+  font-family: 'Roboto Mono', monospace;
+}
+.main {
+  display: grid;
+  grid-template-areas: 
+  "menu submenu submenu submenu"
+  "menu search  picture picture"  
+  "menu slider  picture picture";
+  height: 100vh;
+}
+.picture {
+  grid-area: picture;
+  width: 1272px;
+  /* grid: span 2/3/3/4; */
+}
+/* Меню */
+.menu {
+  background-color: var(--menu_color);
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  grid-area: menu;
+  grid-row: span 3;
+}
+.logo {
+  max-width: 51px;
+  max-width: 53px;
+  padding-top: 40px;
+}
+.menu_icon {
+  width: 25px;
+  height: 26px;
+  margin-bottom: 547px;
+}
+/* Горизонтальное меню */
+.submenu {
+  grid-area: submenu;
+}
+/* Блок поиска */
+.search {
+  grid-area: search;
+}
+/* Слайдер */
+.slider {
+  grid-area: slider;
+}
