@@ -1,0 +1,19 @@
+/* Цвета */
+:root {
+  --bg_color: #F0FFFF;
+  --primary_text_color: #36394F;
+  --secondary_text_color: #FC896A;
+}
+*, *::after, *::before {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+body {
+  font-family: 'Roboto Mono', monospace;
+  font-weight: 400;
+}
+.main {
+  height: 100vh;
+  width: 100vw;
+} 
