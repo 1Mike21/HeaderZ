@@ -16,4 +16,161 @@ body {
 .main {
   height: 100vh;
   width: 100vw;
+  overflow: hidden;
 } 
+.container {
+  position: relative;
+  display: grid;
+  grid-template: minmax(0, 1120px) / minmax(0, 1fr) minmax(0, 2fr) minmax(0, 1fr);
+  grid-template-areas: 
+  "first words second";
+  background-color: var(--bg_color);
+  width: 100%;
+  height: 100%;
+}
+.first_col {
+  grid-area: first;
+}
+.second_col {
+  grid-area: second;
+}
+.primary_letters {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-direction: column;
+  text-align: right;
+  color: var(--primary_text_color);
+  font-size: 555px;
+  line-height: 560px;
+  font-weight: 700;
+  text-transform: uppercase;
+}
+.primary_letters p {
+  max-width: 300px;
+}
+.primary_words {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  grid-area: words;
+  color: var(--secondary_text_color);
+  font-size: 222px;
+  font-weight: 700;
+  letter-spacing: 22px;
+  text-transform: uppercase;
+}
+.h_letter {
+  grid-area: h;
+  margin-top: -110px;
+  margin-left: -250px;
+}
+.about_word {
+  grid-area: about;
+  margin-top: -80px;
+}
+.o_letter {
+  grid-area: o;
+  margin-top: -100px;
+  margin-right: -170px;
+}
+.m_letter {
+  grid-area: m;
+  margin-left: -250px;
+  margin-bottom: -65px;
+}
+.work_word {
+  grid-area: work;
+  margin-bottom: -60px;
+}
+.e_letter {
+  grid-area: e;
+  margin-right: -170px;
+  margin-bottom: -65px;
+}
+.arrow_right {
+  z-index: 10;
+}
+.foreground {
+  position: absolute;
+  z-index: 1;
+  top: 50px;
+  left: 175px;
+  right: 120px;
+  bottom: 100px;
+  max-width: 1572px;
+  max-height: 913px;
+  background-color: #F0FFFF;
+  display: grid;
+  grid-template: 293px 278px / 413px ;
+  grid-template-areas: 
+  "greeting astronaut social_media"
+  "menu     astronaut ."
+  "feedback astronaut skills";
+}
+.main_img { 
+  grid-area: astronaut;
+  max-width: 941px;
+  max-height: 962px;
+}
+.menu {
+  grid-area: menu;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+}
+.menu_links {
+  color: var(--primary_text_color);
+  font-size: 18px;
+  font-weight: 700;
+  line-height: 55px;
+  text-transform: uppercase;
+  text-decoration: none;
+  max-width: 159px;
+}
+.menu_links::after { 
+  content: "";
+  display: block;
+  max-width: 144px;
+  height: 2px;
+  width: 0%;
+  background-color: var(--primary_text_color);
+  transition: width 1s ease;
+}
+.menu_links:hover::after, .menu_links:focus::after {
+  width: 100%;
+}
+.describe_feedback {
+  grid-area: feedback;
+  position: absolute;
+  bottom: 140px;
+  max-width: 190px;
+  margin-left: 173px;
+  color: var(--primary_text_color);
+}
+.describe_greeting {
+  grid-area: greeting;
+  font-size: 14px;
+  color: var(--primary_text_color);
+  font-weight: 500;
+  max-width: 159px;
+}
+.describe_skills {
+  grid-area: skills;
+  max-width: 159px;
+  position: absolute;
+  bottom: 140px;
+  text-align: right;
+  justify-self: end;
+}
+.social_media {
+  grid-area: social_media;
+  margin-right: 50px;
+}
+.social_media_links {
+  padding-right: 54px;
+}
+
+
