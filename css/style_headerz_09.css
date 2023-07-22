@@ -5,7 +5,8 @@
   --watch_bg_color: #003158;
   --secondary_text_color: #EDF7FB;
   --colorpicker_bg_color: #E3F5FF;
-  --references_bg_color: #ED6771;
+  --description_bg_color: #ED6771;
+  --black_color: #000000;
 }
 
 *,
@@ -19,6 +20,7 @@
 body {
   font-family: 'Roboto Mono', monospace;
   font-weight: 400;
+  font-size: 16px;
 }
 .main {
   height: 100vh;
@@ -26,13 +28,14 @@ body {
 }
 .container {
   display: grid;
-  grid-template: 114px 1fr / 153px 495px 1fr;
+  grid-template: 114px 1fr / 153px 1009px 261px auto;
   grid-template-areas:
-    "menu submenu submenu submenu"
-    "menu search  picture picture"
-    "menu slider  picture picture";
+    "menu submenu     watch info"
+    "menu colorpicker watch info"
+    "menu .           watch info";
   height: 100%;
   width: 100%;
+  background-color: var(--colorpicker_bg_color);
 }
 /* Меню */
 .menu {
@@ -54,4 +57,187 @@ body {
   width: 25px;
   height: 26px;
   margin-bottom: 547px;
+}
+/* Горизонтальное меню */
+.submenu {
+  padding-left: 57px;
+  padding-right: 52px;
+  grid-area: submenu;
+}
+.menu_list {
+  display: flex;
+  justify-content: space-between;
+  list-style: none;
+  padding-top: 52px;
+}
+.menu_group_list {
+  display: flex;
+  font-weight: 700;
+}
+.menu_group_list li {
+  margin-right: 61px;
+}
+.menu_list li:last-child{
+  margin-right: 0px;
+}
+.submenu_link {
+  text-decoration: none;
+  text-transform: uppercase;
+  color: var(--black_color);
+}
+.secondary_menu_list .submenu_link {
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 24px;
+  text-transform: none ;
+}
+.arrow_down {
+  margin-left: 10px;
+}
+/* Colorpicker */
+.colorpicker {
+  display: flex;
+  align-items: center;
+  max-width: 225px;
+  grid-area: colorpicker;
+  margin-left: 43px;
+  max-height: 600px;
+  margin-top: 110px;
+}
+.colorpicker h5 {
+  font-size: 14px;
+  font-weight: 500;
+  margin-right: 26px;
+  text-transform: uppercase;
+  transform: rotate(-90deg);
+}
+/* Watch */
+.watch_box {
+  z-index: 1;
+  background-color: var(--watch_bg_color);
+  grid-area: watch;
+  justify-content: center;
+  align-items: center;
+  grid-row: span 3;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+}
+.watch {
+  margin-left: 35px;
+  max-width: 572px;
+  max-height: 665px;
+}
+.watch_arrow_down { 
+  transform: rotate(180deg);
+}
+/* Поиск */
+.search_box {
+  grid-area: search;
+  min-height: 53px;
+  text-align: right;
+  padding-right: 83px;
+  padding-top: 44px;
+}
+.search_box a:first-child {
+  margin-right: 54px;
+}
+/* Соц. сети */
+.social_media {
+  grid-area: social;
+  min-height: 53px;
+  text-align: right;
+  padding-right: 83px;
+}
+.social_media a:first-child {
+  margin-right: 54px;
+}
+/* Описание */
+.description {
+  display: grid;
+  grid-template: repeat(3, 1fr)/ 3fr 1fr;
+  grid-template-areas: 
+  "model  plus"
+  "title  title"
+  "slogan slogan";
+  max-width: 1365px;
+  max-height: 596px;
+  grid-area: colorpicker;
+  margin-left: 270px;
+  margin-top: 110px;
+}
+.description_title {
+  grid-area: title;
+  font-size: 222px;
+  letter-spacing: 72px;
+  color: var(--primary_text_color);
+  text-transform: uppercase;
+  font-weight: 400;
+}
+.description_plus {
+ grid-area: plus;
+ justify-self: center;
+ align-self: center;
+}
+.description_model {
+ grid-area: model;
+ text-align: right;
+ align-self: center;
+ padding-right: 20px;
+}
+.description_slogan {
+ grid-area: slogan;
+ justify-self: self-end;
+ align-self: self-end;
+ text-align: right;
+ padding-right: 200px;
+}
+.secondary_information {
+  grid-area: info;
+  background-color: var(--description_bg_color);
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+.secondary_description {
+  justify-self: center;
+  display: flex;
+  flex-direction: column;
+  max-width: 220px;
+  margin: 0 auto;
+  text-align: right;
+  justify-content: space-between;
+  min-height: 596px;
+}
+.secondary_title {
+  letter-spacing: normal;
+}
+.description_price {
+ grid-area: price;
+ color: var(--secondary_text_color);
+ font-weight: 500;
+ text-transform: uppercase;
+ font-size: 18px;
+}
+.price {
+  font-size: 20px;
+  font-weight: 700;
+}
+.btn_buy {
+ grid-area: btn;
+ display: flex;
+ justify-content: space-between;
+ min-width: 211px;
+ min-height: 79px;
+ border: none;
+ font-size: 20px;
+ text-transform: uppercase;
+ font-weight: 700;
+ line-height: 79px;
+ font-family: 'Roboto Mono', sans-serif;
+ background-color: var(--description_bg_color);
+ color: var(--secondary_text_color);
+}
+.bracket_right {
+  transform: rotate(180deg);
 }
